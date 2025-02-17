@@ -41,10 +41,10 @@ function playRound (humanChoice, computerChoice ) {
     
     function getHumanChoice() {
         let sign = window.prompt("Enter rock, paper or scissors");
-        if(sign === "rock"){
+        if(sign.toLowerCase() === "rock"){
             return 1; 
         }
-        else if (sign === "paper"){
+        else if (sign.toLowerCase() === "paper"){
             return 2;
         }      
         else {
@@ -57,7 +57,9 @@ function playRound (humanChoice, computerChoice ) {
     
     function playRound (a, b) {
         const humanChoice = getHumanChoice();
+        console.log(humanChoice);
         const computerChoice = getComputerChoice();
+        console.log(computerChoice);
         
         if (humanChoice < computerChoice ){
             if (humanChoice === 2 && computerChoice === 3 ){
