@@ -52,10 +52,14 @@ function playRound (humanChoice, computerChoice ) {
         } 
     }
     
+    
+function playGame(numRounds = 5){
+
     let humanScore = 0;
     let computerScore = 0;
     
-    function playRound (a, b) {
+    function playRound () {
+
         const humanChoice = getHumanChoice();
         console.log(humanChoice);
         const computerChoice = getComputerChoice();
@@ -87,3 +91,20 @@ function playRound (humanChoice, computerChoice ) {
             }
         else {return "Tie!" + " *** " + "Human: " + humanScore + " | " + "Computer " + computerScore;}
     }
+
+
+    for (let i = 0; i < numRounds; i++){
+        const roundResult = playRound();
+        alert(roundResult);
+    }
+    
+    if (humanScore > computerScore){
+        return "Congratulations, You Win!" + " *** " + "Human: " + humanScore + " | " + "Computer " + computerScore;
+    } else if (humanScore < computerScore){
+        return "You lose, Try again next time." + " *** " + "Human: " + humanScore + " | " + "Computer " + computerScore;
+    } else {
+        return "mmmmm, There's a Tie!" + " *** " + "Human: " + humanScore + " | " + "Computer " + computerScore;
+    }
+     humanScore = 0;
+     computerScore = 0;
+}
